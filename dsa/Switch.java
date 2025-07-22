@@ -57,7 +57,7 @@ public class Switch {
             case 3: {
                 System.out.println("Gitanjali Singh Rathore");
 
-                String department = sc.next()
+                String department = sc.next();
 
                 // Nested switch inside case 3 — enclosed in curly braces
                 switch (department) {
