@@ -7,6 +7,7 @@ public class LinearSearch {
         int ans = LinearSearch(num , target);
         System.out.println(ans);
     }
+    //Search the target
     static int LinearSearch(int []arr , int target) {
         if (arr.length == 0) {
             return -1;
