@@ -2,27 +2,29 @@ package BinarySearch; // If using package structure
 
 public class BinarySearch {
     public static void main(String[] args) {
-        int[] arr = {2, 4, 6, 8, 10, 12};
-        int target = 10;
-        int result = binarySearch(arr, target);
-        System.out.println("Element found at index: " + result);
+        int [] arr = {-1,-5,-6,-8,0,2,4,6,7,8,35};
+        int target = 0;
+        int ans = binarySearch(arr, target);
+        System.out.println(ans);
+
     }
+    public static int binarySearch(int [] arr, int target){
 
-    public static int binarySearch(int[] arr, int target) {
         int start = 0;
-        int end = arr.length - 1;
+        int end = arr.length-1;
+        while(start <= end){
+            int mid = start + (end-start)/2;
 
-        while (start <= end) {
-            int mid = start + (end - start) / 2;
-
-            if (arr[mid] == target)
-                return mid;
-            else if (arr[mid] < target)
-                start = mid + 1;
-            else
+            if (target < arr[mid]){
                 end = mid - 1;
-        }
+            } else if (target > arr[mid]) {
+                start =  mid + 1;
 
-        return -1; // not found
+            }
+            else {
+                return mid;
+            }
+        }
+        return -1;
     }
 }
